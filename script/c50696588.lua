@@ -13,13 +13,13 @@ end
 function c50696588.target(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.GetFlagEffect(tp,50696588)==0
 		and Duel.GetLocationCount(1-tp,LOCATION_MZONE,nil,LOCATION_REASON_COUNT)>0 end
-	local zone=Duel.SelectDisableField(tp,1,0,LOCATION_MZONE,0)
-	Duel.SelectDisableField(1-tp,1,LOCATION_MZONE,0,~(zone>>16))
+	local zone=Duel.SelectDisableField(1-tp,1,LOCATION_MZONE,0,~(Duel.SelectDisableField(tp,1,0,LOCATION_MZONE,0)>>16))
 	e:SetLabel(zone)
 end
 function c50696588.activate(e,tp,eg,ep,ev,re,r,rp)
 	local zone=e:GetLabel()
-	local nseq=math.log(zone,2)
+	local nseq=math.log(zone>>16,2)
+	if tp==1 then zone=zone>>16 end
 	if not Duel.CheckLocation(1-tp,LOCATION_MZONE,nseq) then return end
 	Duel.RegisterFlagEffect(tp,50696588,0,0,0)
 	local e1=Effect.CreateEffect(e:GetHandler())
