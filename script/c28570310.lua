@@ -1,6 +1,7 @@
 --魔導獣 ガルーダ
 --Mythical Beast Garuda
 --Scripted by Eerie Code
+--Added fix by AquaGamingPlays
 function c28570310.initial_effect(c)
 	aux.EnablePendulumAttribute(c)
 	c:EnableCounterPermit(0x1,LOCATION_MZONE)
