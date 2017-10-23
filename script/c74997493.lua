@@ -3,7 +3,7 @@
 --Script by nekrozar
 function c74997493.initial_effect(c)
 	--link summon
-	aux.AddLinkProcedure(c,nil,2,99,c74997493.lcheck)
+	aux.AddLinkProcedure(c,nil,2,nil,c74997493.lcheck)
 	c:EnableReviveLimit()
 	--effect gain
 	local e2=Effect.CreateEffect(c)
