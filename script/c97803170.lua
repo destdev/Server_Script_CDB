@@ -48,7 +48,7 @@ function c97803170.spfilter(c,e,tp)
 	return c:IsRace(RACE_FIEND) and c:IsLevelAbove(5) and c:IsCanBeSpecialSummoned(e,0,tp,false,false)
 end
 function c97803170.cfilter(c)
-	return c:IsRace(RACE_FIEND)
+	return c:IsRace(RACE_FIEND) and c:IsDiscardable(REASON_EFFECT)
 end
 function c97803170.sptg(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	if chkc then return chkc:IsLocation(LOCATION_GRAVE) and chkc:IsControler(tp) and c97803170.spfilter(chkc,e,tp) end
