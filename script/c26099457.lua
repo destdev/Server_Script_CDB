@@ -11,7 +11,7 @@ function c26099457.initial_effect(c)
 	c:RegisterEffect(e1)
 end
 function c26099457.filter(c)
-	return c:IsFaceup() and not c:IsType(TYPE_XYZ)
+	return c:IsFaceup() and c:IsLevelAbove(0)
 end
 function c26099457.target(e,tp,eg,ep,ev,re,r,rp,chk,chkc)
 	if chkc then return chkc:IsLocation(LOCATION_MZONE) and chkc:IsControler(tp) and c26099457.filter(chkc) end
