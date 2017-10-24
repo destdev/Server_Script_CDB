@@ -60,12 +60,10 @@ function c52927340.disop(e,tp,eg,ep,ev,re,r,rp)
 		e1:SetRange(LOCATION_MZONE)
 		e1:SetCode(EFFECT_DISABLE)
 		e1:SetReset(RESET_EVENT+0x1fe0000)
-		e1:SetLabelObject(c)
-		e1:SetCondition(c52927340.dtg)
+		e1:SetCondition(c52927340.rcon)
 		tc:RegisterEffect(e1,true)
 	end
 end
-function c52927340.dtg(e)
-    	local c=e:GetLabelObject()
-    	return c:IsHasCardTarget(e:GetHandler())
+function c52927340.dcon(e)
+    	return e:GetOwner():IsHasCardTarget(e:GetHandler())
 end
