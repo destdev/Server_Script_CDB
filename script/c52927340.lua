@@ -60,7 +60,7 @@ function c52927340.disop(e,tp,eg,ep,ev,re,r,rp)
 		e1:SetRange(LOCATION_MZONE)
 		e1:SetCode(EFFECT_DISABLE)
 		e1:SetReset(RESET_EVENT+0x1fe0000)
-		e1:SetCondition(c52927340.rcon)
+		e1:SetCondition(c52927340.dcon)
 		tc:RegisterEffect(e1,true)
 	end
 end
